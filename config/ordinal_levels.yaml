@@ -1,0 +1,93 @@
+# Ordinal codes (Sec 3.4: frequency items, education, income; food portions per
+# the Phase 0 decision). Each scale lists its levels from lowest to highest and
+# they are coded 0, 1, 2, ... Matching is on normalized text (casefolded,
+# whitespace collapsed; the latin-1 en dash is read as "-", and "?" in "?1x/hari"
+# is the "≥" sign lost in the export). Levels under `missing` become NaN.
+# Every raw value of every ordinal column must match a level or a missing entry.
+
+scales:
+  education:     ["Tidak tamat SD", "SD", "SMP", "SMA/SMK", "Diploma/S1", "Lebih tinggi dari S1 (S2/S3/Profesi)"]
+  income:        ["<1 juta", "1-2 juta", "2-3 juta", ">3 juta"]
+  hfias:         ["Tidak", "Jarang (1-2x)", "Kadang-kadang (3-10x)", "Sering (>10x)"]
+  counselling:   ["Tidak pernah", "Pernah sekali", "2-3 kali", ">3 kali"]
+  aid_frequency: ["Tidak menerima", "1x/bulan", "2-3x/bulan", ">4x/bulan"]
+  handwashing:   ["Tidak pernah", "Kadang-kadang", "Selalu"]
+  food_washing:  ["Tidak pernah", "Kadang-kadang", "Selalu dicuci bersih"]
+  meals:         ["1x", "1-2x", "2-3x", ">3x"]
+  snacks:        ["Tidak pernah", "1x", "2-3x", ">3x"]
+  walking_days:  ["Tidak pernah", "1-2 hari", "3-5 hari", "Setiap hari"]
+  chores:        ["Tidak", "Jarang", "Cukup sering", "Setiap hari"]
+  exercise:      ["Tidak pernah", "Ya, sesekali", "Ya, rutin"]
+  ffq_frequency: ["Tidak pernah", "1-3x/bulan", "1x/minggu", "2-3x/minggu", "4-6x/minggu", "?1x/hari"]
+  portion_animal: ["Tidak pernah", "1 potong/ekor/butir", "2 potong/ekor/butir", "3 potong/ekor/butir", ">3 potong/ekor/butir"]
+  portion_plant:  ["Tidak pernah", "1 potong/buah/mangkuk", "2 potong/buah/mangkuk", "3 potong/buah/mangkuk", ">3 potong/buah/mangkuk"]
+  portion_veg:    ["Tidak pernah", "1 mangkuk/buah", "2 mangkuk/buah", "3 mangkuk/buah", ">3 mangkuk/buah"]
+  portion_glass:  ["Tidak pernah", "1 gelas", "2 gelas", "3 gelas", ">3 gelas"]
+  portion_other:  ["Tidak pernah", "1 gelas/butir", "2 gelas/butir", "3 gelas/butir", ">3 gelas/butir"]
+
+missing: ["Tidak tahu"]
+
+columns:
+  19: education
+  21: education
+  23: income
+  30: hfias
+  31: hfias
+  32: hfias
+  33: hfias
+  34: hfias
+  35: hfias
+  36: hfias
+  37: hfias
+  38: hfias
+  87: counselling
+  90: aid_frequency
+  97: handwashing
+  98: food_washing
+  106: meals
+  107: snacks
+  110: walking_days
+  112: chores
+  113: exercise
+  116: ffq_frequency
+  117: ffq_frequency
+  118: ffq_frequency
+  119: ffq_frequency
+  120: ffq_frequency
+  121: portion_animal
+  122: portion_animal
+  123: portion_animal
+  124: portion_animal
+  125: portion_animal
+  126: ffq_frequency
+  127: ffq_frequency
+  128: ffq_frequency
+  129: ffq_frequency
+  130: portion_plant
+  131: portion_plant
+  132: portion_plant
+  133: portion_plant
+  134: ffq_frequency
+  135: ffq_frequency
+  136: ffq_frequency
+  137: ffq_frequency
+  138: ffq_frequency
+  139: ffq_frequency
+  140: portion_veg
+  141: portion_veg
+  142: portion_veg
+  143: portion_veg
+  144: portion_veg
+  145: portion_veg
+  146: ffq_frequency
+  147: ffq_frequency
+  148: ffq_frequency
+  149: ffq_frequency
+  150: portion_glass
+  151: portion_glass
+  152: portion_glass
+  153: portion_glass
+  154: ffq_frequency
+  155: ffq_frequency
+  156: portion_other
+  157: portion_other

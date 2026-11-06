@@ -1,0 +1,50 @@
+# Merge mappings for free-text categorical columns (frozen before modeling).
+#
+# Matching: each raw value is stripped and casefolded, then tested against the
+# rules of its column in order; the first regex (re.search) that matches gives
+# the category. A value that matches no rule is an error, so every answer seen
+# in the data is covered. Category "__missing__" becomes NaN and is imputed
+# inside the training fold like any other missing value.
+#
+# Rules are patterns, not raw answers, so no person's name is stored here.
+
+col_13_phone_ownership:            # "Status kepemilikan nomor HP/WhatsApp"
+  - {pattern: '^pribadi$', category: self}
+  - {pattern: 'suami|adik|kakak|anak|ipar', category: family}      # incl. "tidak hafal, milik suami"
+  - {pattern: 'bidan|bides|kader', category: health_worker}        # any midwife or cadre, named or not
+  - {pattern: '^tidak|^lupa', category: none}                      # no phone, no number given, forgot number
+  - {pattern: '^\d$', category: none}                              # single digit (1 record), read as "0" = none
+
+col_20_maternal_occupation:        # "Pekerjaan ibu hamil"
+  - {pattern: 'rumah tangga|irt', category: housewife}
+  - {pattern: 'wiraswasta|pedagang|laundry', category: self_employed_trader}
+  - {pattern: 'karyawan swasta|notaris', category: private_employee}
+  - {pattern: 'pns|tni|honorer|asn|p3k|guru|perawat|staf desa|pemberdayaan', category: public_or_professional}
+  - {pattern: 'pertanian|tani', category: agriculture}
+
+col_22_husband_occupation:         # "Pekerjaan suami"
+  - {pattern: 'tidak bekerja|tki', category: not_working_or_migrant}
+  - {pattern: 'karyawan honorer|honorer|pns|tni|guru|dosen|perawat|p3k|kantor desa|staff desa|kadus|kpu', category: public_or_professional}
+  - {pattern: 'buruh petani|petani|pertanian|pekebun|nelayan|perikanan', category: agriculture_fishery}
+  - {pattern: 'buruh harian|tukang', category: daily_labourer}
+  - {pattern: 'wiraswasta|pedagang|dagang|bengkel', category: self_employed_trader}
+  - {pattern: 'karyawan swasta|pegawai|driver|sopir|supir', category: private_employee}
+
+col_55_chronic_disease:            # "Apakah memiliki riwayat penyakit kronis?" -> none vs any
+  - {pattern: '^(tidak( ada| pernah| bada)?|-|0)$', category: none}
+  - {pattern: '^hanya alergi$', category: none}                    # "only allergy": not a chronic disease
+  - {pattern: '.+', category: any}                                 # e.g. gastritis, malaria, HBsAg+, hypertension, diabetes
+
+col_86_counselling_organiser:      # "Jika Ya, siapa penyelenggaranya?"
+  - {pattern: 'puskesmas|bidan', category: health_center_staff}
+  - {pattern: 'kader', category: posyandu_cadre}
+  - {pattern: 'lsm|program bantuan', category: ngo_programme}
+  - {pattern: 'tahu', category: __missing__}                       # "tidak tahu", "kurang tahu"
+  - {pattern: '^(tidak( ada| pernah)?|belum pernah.*|0)$', category: none}
+
+col_89_food_aid_form:              # "Jika ibu menerima bantuan pangan, dalam bentuk apa ..."
+  - {pattern: '(mentah.*(jadi|matang))|(matang.*mentah)', category: raw_and_ready}
+  - {pattern: 'mentah', category: raw_food}
+  - {pattern: 'makanan jadi|bubur|^mbg$', category: ready_food}    # MBG = free nutritious meal programme
+  - {pattern: 'uang', category: cash}
+  - {pattern: '^(tidak( menerima| ada| pernah)?|-)$', category: none}

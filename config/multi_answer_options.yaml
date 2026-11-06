@@ -1,0 +1,56 @@
+# Known options for multi-answer (checkbox) questions, one binary column per option.
+#
+# Raw answers are option labels joined by ", ", and some labels contain commas
+# themselves, so answers are consumed against these lists (longest label first)
+# rather than split on commas. Matching is on normalized text: casefolded,
+# whitespace collapsed, no spaces around "/".
+#
+# `other_text` lists the free-text "other" answers seen in the raw data that are
+# not form options. tests/test_multianswer.py fails if any answer leaves text
+# that is neither a known option nor listed here.
+
+col_24_household_assets:
+  options:
+    - Rumah (milik sendiri)
+    - Lahan/Tanah
+    - Motor
+    - Mobil
+    - Kulkas
+    - TV
+    - HP
+    - Laptop/PC
+    - Hewan ternak (sapi, kambing, dll)
+  other_text: []
+
+col_65_ifa_nonadherence_reasons:
+  options:
+    - Lupa
+    - Selalu minum TTD
+    - Rasa atau bau tidak enak
+    - Tablet habis dan belum dapat lagi
+    - Mual, sembelit, atau efek samping lain
+    - Tidak tahu pentingnya
+  other_text: []
+
+col_68_anemia_symptoms_known:
+  options:
+    - Letih/lemas
+    - Pucat
+    - Pusing
+    - Sesak
+    - Tidak tahu
+  other_text:
+    - Gampang lelah
+    - Banyak pikiran
+    - Mual
+    - Kurang tidur
+    - Susah tidur
+
+col_93_ifa_programme_obstacles:
+  options:
+    - Ibu kurang informasi / edukasi
+    - Tidak ada pengingat dari petugas/keluarga
+    - Efek samping membuat ibu enggan minum
+    - Stok TTD sering habis
+    - Jarak / akses ke fasilitas terlalu jauh
+  other_text: []

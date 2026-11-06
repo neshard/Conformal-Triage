@@ -1,0 +1,40 @@
+rule:
+  match:
+  - normalized name (lowercase, trimmed, collapsed whitespace)
+  - age (col 14)
+  - enumerator
+  - subdistrict
+  max_differing_items: 20
+  items: cols 14-157 (144)
+  keep: earliest by form timestamp
+drop:
+- 37
+- 147
+- 288
+- 344
+duplicate_pairs:
+- rows:
+  - 21
+  - 344
+  differing_items: 13
+- rows:
+  - 30
+  - 37
+  differing_items: 13
+- rows:
+  - 66
+  - 147
+  differing_items: 12
+- rows:
+  - 109
+  - 288
+  differing_items: 18
+ambiguous_pairs:
+- - 258
+  - 372
+ambiguous_differing_items:
+- 59
+ambiguous_use: kept in the main analysis; later record of each pair dropped in sensitivity
+  analysis 6
+matches_proposal: true
+source: aligned named export; names are not stored

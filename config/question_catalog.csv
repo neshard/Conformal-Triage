@@ -1,0 +1,167 @@
+col_index,column,group_id,group_name,domain,tier,cost,include_anemia,include_ced,encoding,exclude_reason
+0,Timestamp,,,excluded,,,0,0,,identifier/admin: form timestamp (used only for duplicate handling)
+1,Nama Enumetor,,,excluded,,,0,0,,identifier: enumerator name
+2,Dengan ini saya menyatakan bahwa saya telah membaca penjelasan penelitian,,,excluded,,,0,0,,admin: consent statement
+3,Usia,,,excluded,,,0,0,,"duplicate age (admin block); col 14 is authoritative, 12 rows differ"
+4,Tanggal wawancara,,,excluded,,,0,0,,measurement date: interview date
+5,Kode Responden,,,excluded,,,0,0,,identifier: respondent code
+6,Kecamatan,G001,subdistrict,context,0,1,1,1,onehot,
+7,Pilih Desa,,,excluded,,,0,0,,village name
+8,Pilih Desa 2,,,excluded,,,0,0,,village name
+9,Pilih Desa 3,,,excluded,,,0,0,,village name
+10,Pilih Desa 4,,,excluded,,,0,0,,village name
+11,Pilih Desa 5,,,excluded,,,0,0,,village name
+12,Puskesmas,,,excluded,,,0,0,,health center name
+13,Status kepemilikan nomor HP/WhatsApp,G002,phone number ownership,context,0,1,1,1,onehot,
+14,Usia,G003,maternal age,context,0,1,1,1,numeric,
+15,Jumlah anggota keluarga,G004,household size,context,0,1,1,1,numeric,
+16,Jumlah anak,G005,number of children,context,0,1,1,1,numeric,
+17,Jumlah anak bayi/balita (<5 tahun),G006,children under five,context,0,1,1,1,numeric,
+18,Status  perkawinan,G007,marital status,context,0,1,1,1,onehot,
+19,Pendidikan terakhir ibu hamil,G008,maternal education,context,0,1,1,1,ordinal,
+20,Pekerjaan ibu hamil,G009,maternal occupation,context,0,1,1,1,onehot,
+21,Pendidikan terakhir suami,G010,husband education,context,0,1,1,1,ordinal,
+22,Pekerjaan suami,G011,husband occupation,context,0,1,1,1,onehot,
+23,Kisaran pendapatan bulanan keluarga,G012,monthly household income,context,0,1,1,1,ordinal,
+24,Kepemilikan aset rumah tangga,G013,household assets,context,0,1,1,1,multibinary,
+25,Dimanakah lokasi utama Ibu biasa melakukan pemeriksaan kesehatan?,G014,usual place of health check,context,0,1,1,1,onehot,
+26,Jarak dari rumah ke tempat layanan kesehatan,G015,distance to health service,context,0,1,1,1,onehot,
+27,Moda transportasi utama yang Ibu gunakan ke tempat layanan kesehatan,G016,transport to health service,context,0,1,1,1,onehot,
+28,Apakah keluarga ibu menerikan bantuan sosial?,G017,social assistance received,context,0,1,1,1,onehot,
+29,Jaminan kesehatan apa saja yang sudah dimiliki oleh rumah tangga?,G018,health insurance,context,0,1,1,1,onehot,
+30,"Pada 4 minggu terakhir, apakah ibu merasa khawatir bahwa keluarga ibu tidak memiliki cukup makanan?",G020,HFIAS item 1,hfias,1,2,1,1,ordinal,
+31,"Pada 4 minggu terakhir, apakah pernah terjadi bahwa ibu atau anggota keluarga ibu tidak bisa makan makanan yang diinginkan karena kekurangan uang atau krisis makanan?",G021,HFIAS item 2,hfias,1,2,1,1,ordinal,
+32,"Pada 4 minggu terakhir, apakah pernah terjadi bahwa ibu atau anggota keluarga harus makan makanan yang tidak beragam/kurang variasi karena keterbatasan seumber daya?",G022,HFIAS item 3,hfias,1,2,1,1,ordinal,
+33,"Pada 4 minggu terakhir, apakah pernah terjadi bahwa ibu atau anggota keluarga ibu harus makan makanan yang tidak disukai karena kekurangan uang atau krisis makanan?",G023,HFIAS item 4,hfias,1,2,1,1,ordinal,
+34,"Pada 4 minggu terakhir, apakah pernah terjadi bahwa ibu atau anggota keluarga ibu harus makan dengan porsi yang lebih sedikit dari yang anda pikir seharusnya dimakan karena kekurangan makanan untuk dimakan?",G024,HFIAS item 5,hfias,1,2,1,1,ordinal,
+35,"Pada 4 minggu terakhir, apakah pernah terjadi bahwa ibu atau anggota keluarga lain harus mengurangi frekuensi makan dalam sehari karena kekurangan makanan untuk dimakan?",G025,HFIAS item 6,hfias,1,2,1,1,ordinal,
+36,"Pada 4 minggu terakhir, apakah ibu pernah mengalami tidak ada makanan apa pun di dalam rumah karena kekurangan uang untuk membeli makanan?",G026,HFIAS item 7,hfias,1,2,1,1,ordinal,
+37,"Pada 4 minggu terakhir, apakah pernah terjadi bahwa ibu atau anggota keluarga Anda tidur dalam keadaan lapar karena tidak ada cukup makanan untuk dimakan?",G027,HFIAS item 8,hfias,1,2,1,1,ordinal,
+38,"Pada 4 minggu terakhir, apakah pernah terjadi bahwa ibu atau anggota keluarga ibu tidak makan seharian karena tidak ada cukup makanan untuk dimakan?",G028,HFIAS item 9,hfias,1,2,1,1,ordinal,
+39,Paritas (G_P_A_),,,excluded,,,0,0,,gravida-para-abortus field (inconsistent format)
+40,Usia kehamilan saat ini,G019,gestational age (weeks),context,0,1,1,1,numeric,
+41,LILA (Lingkar Lengan Atas),G091,MUAC (cm),measurement,2,5,1,0,numeric,
+42,Tanggal pengukuran LILA,,,excluded,,,0,0,,measurement date: MUAC
+43,Berat badan sebelum kehamilan,G089,pre-pregnancy weight (kg),measurement,2,5,1,1,numeric,
+44,Tanggal pengukuran berat badan,,,excluded,,,0,0,,measurement date: weight
+45,Tinggi badan,G090,height (cm),measurement,2,5,1,1,numeric,
+46,Tanggal pengukuran tinggi badan,,,excluded,,,0,0,,measurement date: height
+47,Hasil pemeriksaan Hb (g/dL),,,excluded,,,0,0,,label source: hemoglobin
+48,Tanggal pemeriksaan Hb,,,excluded,,,0,0,,measurement date: hemoglobin
+49,Kapan pertama kali ibu periksa kehamilan?,G029,timing of first ANC,anc_health,1,2,1,1,onehot,
+50,Tempat melakukan pemeriksaan ANC kehamilan pertama kali,G030,place of first ANC,anc_health,1,2,1,1,onehot,
+51,Apa alasan ibu memilih tersebut?,G031,reason for ANC place,anc_health,1,2,1,1,onehot,
+52,"Sejauh ini, ibu sudah berapa kali ANC?",G032,number of ANC visits,anc_health,1,2,1,1,numeric,
+53,Siapa yang biasanya mengingatkan Ibu untuk periksa kehamilan?,G033,who reminds about ANC,anc_health,1,2,1,1,onehot,
+54,Apakah selama hamil ibu pernah menunda atau melewatkan jadwal periksa? Mengapa?,G034,delayed/missed ANC and why,anc_health,1,2,1,1,onehot,
+55,Apakah memiliki riwayat penyakit kronis ?,G035,chronic disease history,anc_health,1,2,1,1,onehot,
+56,Apakah ibu menerima Tablet Tambah Darah (TTD) pada kehamilan ini?,G036,received IFA this pregnancy,ifa,1,2,1,1,onehot,
+57,Kapan pertama kali ibu menerima TTD untuk kehamilan ini?,G037,timing of first IFA receipt,ifa,1,2,1,1,onehot,
+58,Siapa yang memberikan TTD pertama kali kepada ibu?,G038,who gave first IFA,ifa,1,2,1,1,onehot,
+59,Berapa jumlah tablet TTD yang diberikan pertama kali kepada Ibu?,G039,tablets in first IFA supply,ifa,1,2,1,1,onehot,
+60,Apakah Ibu sudah menerima tambahan TTD lagi setelah pemberian pertama itu?,G040,received additional IFA,ifa,1,2,1,1,onehot,
+61,Total perkiraan tablet TTD yang Ibu terima sampai sekarang adalah: ___ tablet,G041,total IFA tablets received,ifa,1,2,1,1,numeric,
+62,"Dari tablet yang ibu terima, kira-kira berapa yang sudah diminum?",G042,share of IFA tablets taken,ifa,1,2,1,1,onehot,
+63,"Dari tablet yang ibu terima, kira-kira berapa yang sudah diminum?  2",,,excluded,,,0,0,,empty column
+64,Biasanya ibu minum tablet tambah darah kapan?,G043,when IFA is usually taken,ifa,1,2,1,1,onehot,
+65,Apa alasan ibu tidak minum / tidak rutin minum TTD?,G044,reasons for not taking IFA,ifa,1,2,1,1,multibinary,
+66,Siapa yang biasanya mengingatkan ibu minum TTD?,G045,who reminds to take IFA,ifa,1,2,1,1,onehot,
+67,Apakah ibu tahu apa yang dimaksud dengan anemia?,G046,knows what anemia is,knowledge,1,2,1,1,onehot,
+68,Sebutkan gejala anemia yang ibu tahu!,G047,anemia symptoms known,knowledge,1,2,1,1,multibinary,
+69,"Menurut ibu, apa akibat yang dapat terjadi jika ibu hamil mengalami anemia?",G048,consequence of anemia in pregnancy,knowledge,1,2,1,1,onehot,
+70,Apakah ibu tahu untuk apa TTD itu diberikan?,G049,purpose of IFA,knowledge,1,2,1,1,onehot,
+71,"Menurut ibu, berapa banyak TTD yang sebaiknya diminum selama masa kehamilan?",G050,recommended IFA count,knowledge,1,2,1,1,onehot,
+72,Dari mana ibu pertama kali tahu tentang TTD?,G051,first source of IFA info,knowledge,1,2,1,1,onehot,
+73,"Menurut ibu, kapan waktu terbaik untuk mulai minum TTD?",G052,best time to start IFA,knowledge,1,2,1,1,onehot,
+74,"Menurut ibu, kapan waktu terbaik untuk minum TTD setiap harinya?",G053,best daily time for IFA,knowledge,1,2,1,1,onehot,
+75,"Menurut ibu, apakah tablet tambah darah boleh diminum bersamaan dengan teh, kopi atau susu?",G054,IFA with tea/coffee/milk,knowledge,1,2,1,1,onehot,
+76,Apakah ibu pernah mendengar istilah stunting?,G055,heard of stunting,knowledge,1,2,1,1,onehot,
+77,"Menurut ibu, apa itu stunting?",G056,what stunting is,knowledge,1,2,1,1,onehot,
+78,"Menurut ibu, kapan stunting mulai bisa terjadi?",G057,when stunting starts,knowledge,1,2,1,1,onehot,
+79,"Menurut ibu, apa penyebab utama stunting?",G058,main cause of stunting,knowledge,1,2,1,1,onehot,
+80,"Menurut ibu, bagaimana cara mencegah stunting?",G059,how to prevent stunting,knowledge,1,2,1,1,onehot,
+81,Apakah ibu pernah mendengar istilah Kurang Energi Kronik (KEK) pada ibu hamil?,G060,heard of CED (KEK),knowledge,1,2,1,1,onehot,
+82,"Menurut ibu, apa itu KEK?",G061,what CED is,knowledge,1,2,1,1,onehot,
+83,Apakah ibu tahu apa saja faktor penyebab KEK?,G062,causes of CED,knowledge,1,2,1,1,onehot,
+84,"Menurut ibu, apa perbedaan antara KEK dan stunting?",G063,CED vs stunting,knowledge,1,2,1,1,onehot,
+85,"Dalam 6 bulan terakhir, apakah di desa/posyandu ibu ada kegiatan penyuluhan tentang gizi atau anemia untuk ibu hamil?",G064,counselling held in village (6 mo),counselling_aid,1,2,1,1,onehot,
+86,"Jika Ya, siapa penyelenggaranya?",G065,counselling organiser,counselling_aid,1,2,1,1,onehot,
+87,Seberapa sering ibu mengikuti penyuluhan/pelayanan gizi/anemia dalam 6 bulan terakhir?,G066,counselling attendance frequency,counselling_aid,1,2,1,1,ordinal,
+88,Apakah ibu menerima bantuan pangan selama masa kehamilan ini?,G067,received food aid,counselling_aid,1,2,1,1,onehot,
+89,"Jika ibu menerima bantuan pangan, dalam bentuk apa yang biasa ibu terima selama masa kehamilan ini?",G068,form of food aid,counselling_aid,1,2,1,1,onehot,
+90,Seberapa sering bantuan tersebut diterima selama masa kehamilan ini?,G069,food aid frequency,counselling_aid,1,2,1,1,ordinal,
+91,"Menurut ibu, apakah bantuan pangan yang diterima memengaruhi pilihan makanan ibu hamil dan keluarga?",G070,food aid changed food choice,counselling_aid,1,2,1,1,onehot,
+92,"Menurut ibu, apa kendala utama program TTD di desa?",,,excluded,,,0,0,,open-text field (free-text version of col 93)
+93,"Menurut ibu, apa kendala utama pelaksanaan program TTD di desa?",G071,IFA programme obstacles,counselling_aid,1,2,1,1,multibinary,
+94,Apakah ibu pernah melakukan pemeriksaan darah (Hb) selama kehamilan ini?,,,excluded,,,0,0,,hemoglobin test ever done (describes label production)
+95,"Jika belum pernah, apa alasan ibu belum melakukan pemeriksaan darah?",,,excluded,,,0,0,,open-text follow-up of col 94
+96,"Jika hasil pemeriksaan menunjukkan ibu mengalami anemia, apa yang akan ibu lakukan?",,,excluded,,,0,0,,hypothetical action if Hb shows anemia (Hb-test block; not in catalog)
+97,"Apakah ibu mencuci tangan dengan sabun sebelum makan, menyiapkan makanan, setelah dari toilet, setelah memegang hewan/sampah?",G072,handwashing with soap,wash_smoking,1,2,1,1,ordinal,
+98,"Sebelum dikonsumsi atau dimasak, apakah ibu selalu mencuci bersih bahan makanan?",G073,washing food ingredients,wash_smoking,1,2,1,1,ordinal,
+99,Dari manakah sumber air minum yang biasanya ibu konsumsi sehari-hari?,G074,drinking water source,wash_smoking,1,2,1,1,onehot,
+100,"Dari manakah sumber air bersih yang ibu gunakan untuk mandi, mencuci, dan kegiatan rumah tangga lainnya?",G075,clean water source,wash_smoking,1,2,1,1,onehot,
+101,"Seberapa jauh jarak sumber air dari tempat penampungan kotoran/ pembuangan limbah (septic tank, saluran got, kandang, ternak, dll)?",G076,water source distance to waste,wash_smoking,1,2,1,1,onehot,
+102,Lokasi keluarga melakukan buang air,G077,toilet location,wash_smoking,1,2,1,1,onehot,
+103,Kebersihan rumah (observasi),,,excluded,,,0,0,,empty column
+104,Apakah ada anggota keluarga merokok di dalam rumah?,G078,indoor smoking in household,wash_smoking,1,2,1,1,onehot,
+105,Bagaimana pola konsumsi makan ibu selama kehamilan?,G079,eating pattern vs before pregnancy,diet_activity,1,2,1,1,onehot,
+106,"Dalam satu hari, berapa kali ibu biasanya makan berat?",G080,main meals per day,diet_activity,1,2,1,1,ordinal,
+107,"Dalam satu hari, berapa kali ibu mengonsumsi makanan selingan?",G081,snacks per day,diet_activity,1,2,1,1,ordinal,
+108,Apakah ibu memiliki pantangan makanan khusus selama hamil?,G082,food taboos in pregnancy,diet_activity,1,2,1,1,onehot,
+109,"Jika Ya, sebutkan pantangan makanan apa saja?",,,excluded,,,0,0,,open-text follow-up of col 108
+110,"Dalam 7 hari terakhir, seberapa sering ibu berjalan kaki minimal 10 menit?",G083,walking days (7 d),diet_activity,1,2,1,1,ordinal,
+111,Berapa lama ibu biasanya berjalan kaki setiap kali melakukannya?,G084,walking duration,diet_activity,1,2,1,1,onehot,
+112,"Apakah ibu melakukan pekerjaan rumah tangga menyapu, mengepel, mencuci, memasak?",G085,household chores frequency,diet_activity,1,2,1,1,ordinal,
+113,Apakah ibu mengikuti senam hamil atau aktivitas fisik terstruktur?,G086,pregnancy exercise,diet_activity,1,2,1,1,ordinal,
+114,"Secara umum, bagaimana tingkat aktivitas fisik ibu selama kehamilan?",G087,overall physical activity level,diet_activity,1,2,1,1,onehot,
+115,Apakah hari kemarin pola makan ibu dipengaruhi oleh kondisi berikut?,G088,yesterday's diet condition,diet_activity,1,2,1,1,onehot,
+116,Seberapa sering kamu mengonsumsi makanan sumber zat besi hewani berikut dalam 1 bulan terakhir?   [Hati ayam/sapi],G092,FFQ Hati ayam/sapi,food_frequency,1,2,1,1,ordinal,
+117,Seberapa sering kamu mengonsumsi makanan sumber zat besi hewani berikut dalam 1 bulan terakhir?   [Daging ayam],G093,FFQ Daging ayam,food_frequency,1,2,1,1,ordinal,
+118,Seberapa sering kamu mengonsumsi makanan sumber zat besi hewani berikut dalam 1 bulan terakhir?   [Daging sapi],G094,FFQ Daging sapi,food_frequency,1,2,1,1,ordinal,
+119,Seberapa sering kamu mengonsumsi makanan sumber zat besi hewani berikut dalam 1 bulan terakhir?   [Ikan laut/pindang/teri],G095,FFQ Ikan laut/pindang/teri,food_frequency,1,2,1,1,ordinal,
+120,Seberapa sering kamu mengonsumsi makanan sumber zat besi hewani berikut dalam 1 bulan terakhir?   [Telur ayam],G096,FFQ Telur ayam,food_frequency,1,2,1,1,ordinal,
+121,Sebutkan ukuran porsi makanan tersebut! [Hati ayam/sapi],G092,FFQ Hati ayam/sapi,food_frequency,1,2,1,1,ordinal,
+122,Sebutkan ukuran porsi makanan tersebut! [Daging ayam],G093,FFQ Daging ayam,food_frequency,1,2,1,1,ordinal,
+123,Sebutkan ukuran porsi makanan tersebut! [Daging sapi],G094,FFQ Daging sapi,food_frequency,1,2,1,1,ordinal,
+124,Sebutkan ukuran porsi makanan tersebut! [Ikan (kembung/tongkol)],G095,FFQ Ikan laut/pindang/teri,food_frequency,1,2,1,1,ordinal,
+125,Sebutkan ukuran porsi makanan tersebut! [Telur ayam],G096,FFQ Telur ayam,food_frequency,1,2,1,1,ordinal,
+126,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati berikut dalam 1 bulan terakhir?   [Tahu],G097,FFQ Tahu,food_frequency,1,2,1,1,ordinal,
+127,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati berikut dalam 1 bulan terakhir?   [Tempe],G098,FFQ Tempe,food_frequency,1,2,1,1,ordinal,
+128,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati berikut dalam 1 bulan terakhir?   [Kacang merah],G099,FFQ Kacang merah,food_frequency,1,2,1,1,ordinal,
+129,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati berikut dalam 1 bulan terakhir?   [Kacang hijau],G100,FFQ Kacang hijau,food_frequency,1,2,1,1,ordinal,
+130,Sebutkan ukuran porsi makanan tersebut! [Tahu],G097,FFQ Tahu,food_frequency,1,2,1,1,ordinal,
+131,Sebutkan ukuran porsi makanan tersebut! [Tempe],G098,FFQ Tempe,food_frequency,1,2,1,1,ordinal,
+132,Sebutkan ukuran porsi makanan tersebut! [Kacang merah],G099,FFQ Kacang merah,food_frequency,1,2,1,1,ordinal,
+133,Sebutkan ukuran porsi makanan tersebut! [Kacang hijau],G100,FFQ Kacang hijau,food_frequency,1,2,1,1,ordinal,
+134,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati dan vitamin C berikut dalam 1 bulan terakhir?   [Sayuran berwarna hijau (Bayam/brokoli/kangkung/daun kelor)],G101,FFQ Sayuran berwarna hijau (Bayam/brokoli/kangkung/daun kelor),food_frequency,1,2,1,1,ordinal,
+135,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati dan vitamin C berikut dalam 1 bulan terakhir?   [Sayuran berwarna orange (Labu kuning/wortel)],G102,FFQ Sayuran berwarna orange (Labu kuning/wortel),food_frequency,1,2,1,1,ordinal,
+136,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati dan vitamin C berikut dalam 1 bulan terakhir?   [Jambu biji],G103,FFQ Jambu biji,food_frequency,1,2,1,1,ordinal,
+137,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati dan vitamin C berikut dalam 1 bulan terakhir?   [Jeruk ],G104,FFQ Jeruk,food_frequency,1,2,1,1,ordinal,
+138,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati dan vitamin C berikut dalam 1 bulan terakhir?   [Pepaya],G105,FFQ Pepaya,food_frequency,1,2,1,1,ordinal,
+139,Seberapa sering kamu mengonsumsi makanan sumber zat besi nabati dan vitamin C berikut dalam 1 bulan terakhir?   [Mangga],G106,FFQ Mangga,food_frequency,1,2,1,1,ordinal,
+140,Sebutkan ukuran porsi makanan tersebut! [Sayuran berwarna hijau (Bayam/brokoli/kangkung/daun kelor)],G101,FFQ Sayuran berwarna hijau (Bayam/brokoli/kangkung/daun kelor),food_frequency,1,2,1,1,ordinal,
+141,Sebutkan ukuran porsi makanan tersebut! [Sayuran berwarna orange (Labu kuning/wortel)],G102,FFQ Sayuran berwarna orange (Labu kuning/wortel),food_frequency,1,2,1,1,ordinal,
+142,Sebutkan ukuran porsi makanan tersebut! [Jambu biji],G103,FFQ Jambu biji,food_frequency,1,2,1,1,ordinal,
+143,Sebutkan ukuran porsi makanan tersebut! [Jeruk ],G104,FFQ Jeruk,food_frequency,1,2,1,1,ordinal,
+144,Sebutkan ukuran porsi makanan tersebut! [Pepaya],G105,FFQ Pepaya,food_frequency,1,2,1,1,ordinal,
+145,Sebutkan ukuran porsi makanan tersebut! [Mangga],G106,FFQ Mangga,food_frequency,1,2,1,1,ordinal,
+146,Seberapa sering kamu mengonsumsi makanan sumber penghambat zat besi berikut dalam 1 bulan terakhir?   [Teh],G107,FFQ Teh,food_frequency,1,2,1,1,ordinal,
+147,Seberapa sering kamu mengonsumsi makanan sumber penghambat zat besi berikut dalam 1 bulan terakhir?   [Kopi],G108,FFQ Kopi,food_frequency,1,2,1,1,ordinal,
+148,Seberapa sering kamu mengonsumsi makanan sumber penghambat zat besi berikut dalam 1 bulan terakhir?   [Susu/produk tinggi kalsium],G109,FFQ Susu/produk tinggi kalsium,food_frequency,1,2,1,1,ordinal,
+149,Seberapa sering kamu mengonsumsi makanan sumber penghambat zat besi berikut dalam 1 bulan terakhir?   [Minuman bersoda],G110,FFQ Minuman bersoda,food_frequency,1,2,1,1,ordinal,
+150,Sebutkan ukuran porsi makanan tersebut! [Teh],G107,FFQ Teh,food_frequency,1,2,1,1,ordinal,
+151,Sebutkan ukuran porsi makanan tersebut! [Kopi],G108,FFQ Kopi,food_frequency,1,2,1,1,ordinal,
+152,Sebutkan ukuran porsi makanan tersebut! [Susu/produk tinggi kalsium],G109,FFQ Susu/produk tinggi kalsium,food_frequency,1,2,1,1,ordinal,
+153,Sebutkan ukuran porsi makanan tersebut! [Minuman bersoda],G110,FFQ Minuman bersoda,food_frequency,1,2,1,1,ordinal,
+154,Seberapa sering kamu mengonsumsi makanan/minuman lain berikut dalam 1 bulan terakhir?   [Air mineral],G111,FFQ Air mineral,food_frequency,1,2,1,1,ordinal,
+155,"Seberapa sering kamu mengonsumsi makanan/minuman lain berikut dalam 1 bulan terakhir?   [Suplemen selain TTD (vitamin, kalsium, penurun BB, dll)]",G112,"FFQ Suplemen selain TTD (vitamin, kalsium, penurun BB, dll)",food_frequency,1,2,1,1,ordinal,
+156,Sebutkan ukuran porsi makanan tersebut! [Air mineral],G111,FFQ Air mineral,food_frequency,1,2,1,1,ordinal,
+157,"Sebutkan ukuran porsi makanan tersebut! [Suplemen selain TTD (vitamin, kalsium, penurun BB, dll)]",G112,"FFQ Suplemen selain TTD (vitamin, kalsium, penurun BB, dll)",food_frequency,1,2,1,1,ordinal,
+158,Titik Koordinat GPS (Longitude),,,excluded,,,0,0,,GPS coordinate
+159,Titik Koordinat GPS (Latitude),,,excluded,,,0,0,,GPS coordinate
+160,Latitude,,,excluded,,,0,0,,GPS coordinate
+161,Longitude,,,excluded,,,0,0,,GPS coordinate
+162,Unnamed: 162,,,excluded,,,0,0,,empty column
+163,Unnamed: 163,,,excluded,,,0,0,,empty column
+164,Unnamed: 164,,,excluded,,,0,0,,empty column
+165,Unnamed: 165,,,excluded,,,0,0,,empty column
